@@ -1,0 +1,35 @@
+version: "3.2"
+services:
+
+  social_media_backend:
+    # restart: always
+    image: django-docker:0.0.1
+    container_name: code
+    command : bash -c "python manage.py makemigrations && python manage.py migrate &&  python manage.py runserver 127.0.0.1:8081"
+    # env_file:
+      # - ./social_media_backend/social_media_project/social_media_project/settings.py
+    build:
+      context: ./social_media_backend/social_media_project/
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+  social_media_frontend:
+    restart: always
+    command : npm start
+    container_name: front
+    build:
+      context: ./social_media_frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - social_media_backend
+    networks:
+      - db-net
+
+networks:
+  db-net:
+    driver: bridge
+
