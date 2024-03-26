@@ -67,7 +67,7 @@ class SocialMedia(APIView):
             user_details = serializer.UserRegistration(other_user, many=True).data
             for i in user_details:
                 if i["user_id"] in request_users:
-                    i["status"] = "2,3"
+                    i["status"] = "1"
                 else:
                     i["status"] = "0"
             response = ["GetAllUsersSuccess", user_details]
