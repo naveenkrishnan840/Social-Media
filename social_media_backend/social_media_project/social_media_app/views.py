@@ -100,7 +100,7 @@ class SocialMedia(APIView):
             status = 2 if request.data[1]["status"] == "accept" else 3
             (models.FriendRequestStatus.objects.filter(from_user_id=from_user, to_user_id=to_user).
              update(request_status=status))
-            response = ["StatusChanged", {}]
+            response = ["StatusChangedSuccess", {}]
 
         response = json.dumps(response)
         return Response(response)
