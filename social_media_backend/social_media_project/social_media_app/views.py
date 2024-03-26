@@ -21,8 +21,11 @@ def send_request_check(request):
     from_user = request.data[1]["from_user"]
     to_user = request.data[1]["to_user"]
     if models.FriendRequestStatus.objects.filter(from_user_id=from_user, to_user_id=to_user,
-                                                 request_status__in=[1, 2]).exists():
+                                                 request_status=1).exists():
         response = ["SendRequestFailed", {}]
+    elif models.FriendRequestStatus.objects.filter(from_user_id=from_user, to_user_id=to_user,
+                                                   request_status=2).exists():
+        response = ["SendRequestAlreadyExist", {}]
     else:
         models.FriendRequestStatus.objects.create(from_user_id=from_user, to_user_id=to_user)
 
