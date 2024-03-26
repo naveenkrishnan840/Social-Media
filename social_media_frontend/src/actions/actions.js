@@ -73,8 +73,7 @@ export const SignIn = ({payload, navigate}) => async dispatch=>  {
 
 export const listOfAllUsers = ({user}) => async dispatch=>  {
     try {
-        const data1 = [{"user_id":user}]
-        const data = ["GetAllUsers", data1];
+        const data = ["GetAllUsers", {"user_id": user}];
         const str_body = JSON.stringify(data)
         const request = await axios({
             method: "POST",
