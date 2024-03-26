@@ -1,4 +1,4 @@
-import { Button, Card, Form, Input } from 'antd';
+import { Button, Card, Form, Input, Space } from 'antd';
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom';
@@ -17,7 +17,8 @@ export const Login = ({SignIn}) => {
 
   return (
     <>
-      <Card title={"Login"} style={{maxWidth:'50%', textAlign:'center', marginTop:150, marginLeft:475, background:"floralwhite"}}>
+      <Space direction='horizontal' style={{width: '100%', justifyContent: 'center'}}>
+      <Card title={"Login"} style={{textAlign:'center', marginTop:150, background:"floralwhite"}}>
         <Form name="basic" form={form}
           labelCol={{
             span: 8,
@@ -89,6 +90,7 @@ export const Login = ({SignIn}) => {
       </Form.Item>
         </Form>
       </Card>     
+      </Space>
     </>
   )
 }
