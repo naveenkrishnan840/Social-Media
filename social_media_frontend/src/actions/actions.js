@@ -119,8 +119,13 @@ export const sendRequest = (user) => async dispatch=>  {
         if (request["status"] === 200){
             const response = JSON.parse(request["data"])
             if (response[0] === "SendRequestSuccess"){
-                message.success("Friend Request Successfully submitted")
-            } else {
+                message.success("Friend Request Successfully submitted");
+                listOfAllUsers(user);
+
+            } else if (response[0] === "SendRequestAlreadyExist"){
+                message.info("Friend Request Already Accepted");
+            } 
+            else {
                 message.error("Friend Request Pending")
             }
                 
@@ -151,9 +156,8 @@ export const changeStatus = (user) => async dispatch=>  {
         if (request["status"] === 200){
             const response = JSON.parse(request["data"])
             if (response[0] === "StatusChanged"){
-                message.success("Friend Request Status Changed")
-            } else {
-                message.error("Friend Request Pending")
+                message.success("Friend Request Status Changed");
+                listOfAllUsers(user);
             }
                 
         } else {
