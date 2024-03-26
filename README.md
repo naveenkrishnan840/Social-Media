@@ -47,7 +47,10 @@ Inside social_media_frontend
 Run locally backend 
 Inside social_media_backend directory
 first actviate env 
+windows
 ### `.venv/Scripts/activate`
+linux
+### `.venv/bin/activate`
 
 Inside social_media_project directory
 ### `python manage.py makemigrations`
