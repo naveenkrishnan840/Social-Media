@@ -11,7 +11,7 @@ COPY package.json ./
 RUN npm install
 # add app
 COPY . ./
-EXPOSE 3001
+EXPOSE 3000
 
 # start app
 # CMD ["npm", "start" , "--host=0.0.0.0"]
