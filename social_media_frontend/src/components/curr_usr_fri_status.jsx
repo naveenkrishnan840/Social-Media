@@ -27,7 +27,6 @@ export const CurrentUsrStatus = ({user_id, accept_users, getAcceptUsers}) => {
         <>
         <Space>
         <Button type='dashed' style={{"color": "green", "background": "lightgreen"}}> Accepted </Button>
-        <Button type='dashed' style={{"color": "red", "background": "#FF7F7F"}}> Follow Back </Button>
         </Space>
         </>
         )
