@@ -154,7 +154,7 @@ export const changeStatus = (user) => async dispatch=>  {
         
         if (request["status"] === 200){
             const response = JSON.parse(request["data"])
-            if (response[0] === "StatusChanged"){
+            if (response[0] === "StatusChangedSuccess"){
                 message.success("Friend Request Status Changed");
                 listOfAllUsers(user);
             }
