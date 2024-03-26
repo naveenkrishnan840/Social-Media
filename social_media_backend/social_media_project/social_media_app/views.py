@@ -63,7 +63,7 @@ class SocialMedia(APIView):
             else:
                 response = ["UserLogInFailed", {}]
         elif request.data[0] == "GetAllUsers":
-            user_id = request.data[1][0]["user_id"]
+            user_id = request.data[1]["user_id"]
             other_user = models.UserRegistration.objects.filter(~Q(user_id=user_id), request_complete=0)
             request_users = (models.FriendRequestStatus.objects.filter(to_user_id=user_id, request_status=0).
                              values_list("from_user_id", flat=True))
