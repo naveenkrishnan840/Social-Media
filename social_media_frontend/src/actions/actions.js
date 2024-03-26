@@ -1,6 +1,5 @@
 import axios from "axios";
 import {message} from "antd";
-import {useHistory} from "react-router-dom"
 axios.defaults.baseURL = "http://127.0.0.1:8081/";
 export const register = ({payload, navigate}) => async dispatch=>  {
     try {
