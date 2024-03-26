@@ -1,6 +1,6 @@
 
 # Getting Started with Django backend Application
-
+# Python 3.8.9 version used.
 
 ## Available Scripts
 
