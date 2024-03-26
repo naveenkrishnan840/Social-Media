@@ -48,12 +48,12 @@ const HeaderPage = ({email_id}) => {
             {
               key: '3',
               icon: <UserOutlined />,
-              label: <Link to="/friend-request">Friend Request</Link>,  
+              label: <Link to="/friend-request">Accept Users</Link>,  
             },
             {
               key: '4',
               icon: <UserOutlined />,
-              label: <Link to="/request-status">Request Status</Link>,  
+              label: <Link to="/request-status">Pending Users</Link>,  
             },
             {
               key: '5',
