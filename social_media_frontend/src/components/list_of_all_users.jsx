@@ -49,7 +49,7 @@ export const AllUsers = ({list_of_users, listOfAllUsers, user_id, sendRequest, c
           return (
           <Button onClick={()=>select_user(user, "send")} type='dashed' style={{"color": "yellow", "background": "lightyellow"}}> Send </Button>
           )
-        } else {
+        } else if (user.status.includes("1")) {
           return (
             <>
             <Space>
