@@ -4,7 +4,7 @@ services:
   social_media_backend:
     # restart: always
     image: django-docker:0.0.1
-    container_name: code
+    container_name: backend
     command : bash -c "python manage.py makemigrations && python manage.py migrate &&  python manage.py runserver 127.0.0.1:8081"
     # env_file:
       # - ./social_media_backend/social_media_project/social_media_project/settings.py
@@ -17,7 +17,7 @@ services:
   social_media_frontend:
     restart: always
     command : npm start
-    container_name: front
+    container_name: frontend
     build:
       context: ./social_media_frontend/
       dockerfile: Dockerfile
