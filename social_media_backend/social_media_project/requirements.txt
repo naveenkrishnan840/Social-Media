@@ -8,4 +8,4 @@ importlib_metadata==7.1.0
 Markdown==3.6
 sqlparse==0.4.4
 typing_extensions==4.10.0
-
+django-ratelimit-4.1.0
