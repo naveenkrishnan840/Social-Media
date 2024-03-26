@@ -5,7 +5,6 @@ class UserRegistration(serializers.Serializer):
     user_id = serializers.IntegerField()
     user_name = serializers.CharField()
     email_id = serializers.CharField()
-    request_complete = serializers.IntegerField()
 
 
 class FriendRequestStatus(serializers.Serializer):
